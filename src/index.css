@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.todo {
+    width: 500px;
+    margin: 200px auto;
+}
+
+.addtodo {
+    background-color: #24273d;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 30px;
+}
+
+.addtodo button {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #a7abd2;
+    border-color: #a7abd2;
+}
+
+.addtodo input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #a7abd2;
+}
+
+.todolist {
+    background-color: #24273d;
+}
+
+.todolist__item {
+    color: #848cae;
+    padding: 15px;
+    border-bottom: 2px solid #848cae;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    position: relative;
+}
+
+.todolist__item-important {
+    background-color: blue;
+}
+
+.todolist__item p {
+    width: 40%;
+    word-wrap: break-word;
+}
+
+.todolist__completed-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #848cae;
+    background-color: transparent;
+    color: #848cae;
+}
+
+.todolist__item-right {
+    position: absolute;
+    right: 15px;
+    padding: 0 15px;
+    display: flex;
+    column-gap: 12px;
+}
+
+.completed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.completed::before {
+    content: '+';
+}
+
+.todofoot {
+    background-color: #24273d;
+    color: #a7abd2;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.todofoot__center {
+    display: flex;
+    column-gap: 15px;
+}
+
+.todofoot button {
+    background-color: transparent;
+    border: none;
+    color: #a7abd2;
+}
+
+.active {
+    color: #3769cc !important;
+}
+
+.comment {
+    color: #a7abd2;
+    padding: 15px;
+}
+
+.todolist__btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.todolist__btn:hover {
+    transform: scale(1.2);
+}
+
+.todolist__btn:nth-child(1) {
+    color: cornflowerblue;
+}
+
+.todolist__btn:nth-child(2) {
+    color: green;
+}
+
+.todolist__btn:nth-child(3) {
+    color: red;
+}
+
+.cart__btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.cart__btn:hover {
+    transform: scale(1.2);
+}
+
+.cart__btn-restore {
+    color: green;
+}
+
+.cart__btn-delete {
+    color: red;
+}
+
+.bg {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+    .todo {
+        width: 400px;
+        margin: 170px auto;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .todo {
+        width: 300px;
+        margin: 130px auto;
+    }
+
+    .todofoot {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 7px;
+    }
 }
